@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazamApp", "RazamApp\RazamApp.csproj", "{B41EBA4A-59B7-4E16-8EA7-8ACE87D15B6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B41EBA4A-59B7-4E16-8EA7-8ACE87D15B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B41EBA4A-59B7-4E16-8EA7-8ACE87D15B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B41EBA4A-59B7-4E16-8EA7-8ACE87D15B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B41EBA4A-59B7-4E16-8EA7-8ACE87D15B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B12A516-DBA8-406F-BB4B-45A820B2131F}
+	EndGlobalSection
+EndGlobal
