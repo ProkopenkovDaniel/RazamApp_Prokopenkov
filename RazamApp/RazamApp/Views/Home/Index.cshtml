@@ -1,31 +1,22 @@
-﻿@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Message</title>
-</head>
-<body>
-    <div>
-        <h3>You have message from:</h3>
-        <table>
-            <tr>
-                <td><p>Id</p></td>
-                <td><p>Content</p></td>
-                <td></td>
-            </tr>
-            @foreach (var b in ViewBag.Messages)
-            {
+﻿@model IEnumerable<RazamApp.Models.Message>
+   @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+        <div>
+            <h3>You have message from:</h3>
+            <table>
                 <tr>
-                    <td><p>@b.Id</p></td>
-                    <td><p>@b.content</p></td>
+                    <td><p>Id</p></td>
+                    <td><p>Content</p></td>
+                    <td></td>
                 </tr>
-            }
-        </table>
-    </div>
-</body>
-</html>
-
+                @foreach (RazamApp.Models.Message b in Model)
+                {
+                    <tr>
+                        <td><p>@b.Id</p></td>
+                        <td><p>@b.content</p></td>
+                        <td><a href="/Home/GetHtml">Переход на другую страницу</a></td>
+                    </tr>
+                }
+            </table>
+        </div>
