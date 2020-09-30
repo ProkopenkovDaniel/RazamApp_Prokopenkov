@@ -1,14 +1,23 @@
-﻿@using (Html.BeginForm("Send", "Home", FormMethod.Post))
-{
-    <input type="hidden" value="@ViewBag.MessageId" name="Id" />
-    <p>Input your Id: </p>
-    @Html.TextBox("Id", "Your id")
-    <p>Input your name:</p>
-    @Html.TextBox("Name", "Your name")
-    <input type="submit" value="Отправить" />
-
-    @Html.Password("UserPassword", "val")
-    @Html.RadioButton("color", "red")
-    @Html.RadioButton("color", "blue")
-    @Html.RadioButton("color", "green")
+﻿@model IEnumerable<RazamApp.Models.Message>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<div>
+    <h3>Распродажа книг</h3>
+    <table>
+        <tr class="header">
+            <td><p>Название книги</p></td>
+            <td><p>Автор</p></td>
+            <td><p>Цена</p></td>
+            <td></td>
+        </tr>
+        @foreach (RazamApp.Models.Message b in Model)
+        {
+            <tr>
+                <td><p>@b.Id</p></td>
+                <td><p>@b.Content</p></td>
+            </tr>
+        }
+    </table>
+</div>

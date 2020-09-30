@@ -14,8 +14,7 @@ namespace RazamApp
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new MessageInitializer());
-
+           // Database.SetInitializer(new MessageInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

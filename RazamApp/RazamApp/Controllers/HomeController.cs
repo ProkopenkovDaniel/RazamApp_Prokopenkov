@@ -15,13 +15,8 @@ namespace RazamApp.Controllers
         {
            IEnumerable<Message> messages = db.Messages;
            ViewBag.Messages = messages;
-            ViewBag.MessageId = "0001";
-            /* так, здесь возвращается View, который задан файлос Index.cshtml, 
-             * то есть одноимённый с методов. То есть здесь происходит рендеринг
-             * некоторой страницы и показывает её пользователю. Это может быть н обязательно
-             * та же самая страница, может быть и другая, но суть в том, что возвращается 
-             * некоторое представление*/
-            return View();
+           // ViewBag.MessageId = "0001";
+            return View(db.Messages);
         }
 
         public ActionResult GetHtml()
@@ -42,17 +37,48 @@ namespace RazamApp.Controllers
                 "</p><p>Реферер: " + referrer + "</p><p>IP-адрес: " + ip + "</p>");
         }
 
-        [HttpGet]
-        public ActionResult Buy()
+        [HttpPost]
+        public ActionResult Send(string[] countries)
         {
-            return View();
+            string result=null;
+            foreach (string contry in countries)
+            {
+                result += contry;
+                result += ";";
+
+            }
+            return Content(result);
         }
 
         [HttpPost]
-        public ActionResult Send(Person person)
+        public ActionResult MyAction(string product, string action)
         {
-            return Content("Thank you");
+            string response=null;
+            if (action == "add")
+            {
+                response = "Add";
+            }
+            else if (action == "delete")
+            {
+                response = "delete";
+            }
+            return Content(response);
         }
-        
+
+        [HttpGet]
+        public ActionResult EditBook(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            Message message = db.Messages.Find(id);
+            if (message != null)
+            {
+                return View(message);
+            }
+            return HttpNotFound();
+        }
+
     }
 }
