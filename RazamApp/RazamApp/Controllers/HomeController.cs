@@ -40,7 +40,6 @@ namespace RazamApp.Controllers
             return Content("<p>Browser: " + browser + "</p><p>User-Agent: " + user_agent + "</p><p>Url запроса: " + url +
                 "</p><p>Реферер: " + referrer + "</p><p>IP-адрес: " + ip + "</p>");
         }
-
         
     }
 }
