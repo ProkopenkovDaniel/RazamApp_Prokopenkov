@@ -12,6 +12,7 @@ namespace RazamApp.Models
         protected override void Seed(MessageContext db)
         {
             db.Messages.Add(new Message { Id = "0001", content = "Hello" });
+            db.Persons.Add(new Person { Id = "0001", Name = "Daniel" });
             base.Seed(db);
         }
     }

@@ -15,12 +15,13 @@ namespace RazamApp.Controllers
         {
            IEnumerable<Message> messages = db.Messages;
            ViewBag.Messages = messages;
+            ViewBag.MessageId = "0001";
             /* так, здесь возвращается View, который задан файлос Index.cshtml, 
              * то есть одноимённый с методов. То есть здесь происходит рендеринг
              * некоторой страницы и показывает её пользователю. Это может быть н обязательно
              * та же самая страница, может быть и другая, но суть в том, что возвращается 
              * некоторое представление*/
-            return View(db.Messages);
+            return View();
         }
 
         public ActionResult GetHtml()
@@ -39,6 +40,18 @@ namespace RazamApp.Controllers
             string referrer = HttpContext.Request.UrlReferrer == null ? "" : HttpContext.Request.UrlReferrer.AbsoluteUri;
             return Content("<p>Browser: " + browser + "</p><p>User-Agent: " + user_agent + "</p><p>Url запроса: " + url +
                 "</p><p>Реферер: " + referrer + "</p><p>IP-адрес: " + ip + "</p>");
+        }
+
+        [HttpGet]
+        public ActionResult Buy()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Send(Person person)
+        {
+            return Content("Thank you");
         }
         
     }

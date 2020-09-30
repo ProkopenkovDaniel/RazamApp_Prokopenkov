@@ -1,23 +1,14 @@
-﻿@model IEnumerable<RazamApp.Models.Message>
-   @{
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-        <div>
-            @Html.Partial("Partial")
-            <h3>You have message from:</h3>
-            <table>
-                <tr>
-                    <td><p>Id</p></td>
-                    <td><p>Content</p></td>
-                    <td></td>
-                </tr>
-                @foreach (RazamApp.Models.Message b in Model)
-                {
-                    <tr>
-                        <td><p>@b.Id</p></td>
-                        <td><p>@b.content</p></td>
-                        <td><a href="/Home/GetHtml">Переход на другую страницу</a></td>
-                    </tr>
-                }
-            </table>
-        </div>
+﻿@using (Html.BeginForm("Send", "Home", FormMethod.Post))
+{
+    <input type="hidden" value="@ViewBag.MessageId" name="Id" />
+    <p>Input your Id: </p>
+    @Html.TextBox("Id", "Your id")
+    <p>Input your name:</p>
+    @Html.TextBox("Name", "Your name")
+    <input type="submit" value="Отправить" />
+
+    @Html.Password("UserPassword", "val")
+    @Html.RadioButton("color", "red")
+    @Html.RadioButton("color", "blue")
+    @Html.RadioButton("color", "green")
+}
