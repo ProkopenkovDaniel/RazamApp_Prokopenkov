@@ -7,7 +7,8 @@ namespace RazamApp.Models
 {
     public class Message
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Content { get; set; }
+        public string SenderName { get; set; }
     }
 }

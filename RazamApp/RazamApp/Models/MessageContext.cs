@@ -8,8 +8,7 @@ namespace RazamApp.Models
 {
     public class MessageContext : DbContext
     {
-
+        public MessageContext() { }
         public DbSet<Message> Messages { get; set; }
-        /*public DbSet<Person> Persons { get; set; }*/
     }
 }
